@@ -1,21 +1,22 @@
-import express, { Express } from "express"
-import cors from 'cors'
-import {AddressInfo} from 'net'
+import { app } from "./app";
 
-const app = express()
-
-app.use(express.json())
-app.use(cors())
-
-const server = app.listen(process.env.PORT || 3003, () => {
-    if(server){
-        const address = server.address() as AddressInfo
-        console.log(`server is running on port http://localhost:${address.port}`)
-    }
-    else{
-        console.log('failure upon starting server')
-    }
-})
+import { getProfessors } from "./endpoints/professors/getProfessors";
+import { getStudentByName } from "./endpoints/students/getStudentByName";
+import registerProfessors from "./endpoints/professors/registerProfessor";
+import registerStudent from "./endpoints/students/registerStudent";
+import changeClassProfessor from "./endpoints/professors/changeClassProfessor";
+import changeClassStudent from "./endpoints/students/changeClassStudent";
 
 
- 
+
+
+app.get("/users", getStudentByName)
+app.get("/professors", getProfessors)
+
+
+app.put('/professors', registerProfessors)
+app.put('/users', registerStudent)
+
+
+app.post('/professors', changeClassProfessor) //falta função para editar o Banco de Dados
+app.post('/users', changeClassStudent) 
