@@ -34,7 +34,7 @@ export const registerStudent = async(req: Request, res:Response) : Promise <void
         }
 
         await connection ("Students").insert(student)
-        res.status(200).send({message: 'Professor cadastrado com sucesso!'})
+        res.status(200).send({message: 'Aluno cadastrado com sucesso!'})
 
     } catch (error:any) {
         res.status(400).send({message:error.message})

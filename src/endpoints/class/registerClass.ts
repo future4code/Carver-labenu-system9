@@ -5,14 +5,16 @@ import connection from "../../connection";
 
 const registerClass = async(req: Request, res:Response) : Promise <void> => {
     try {
-        const name = req.body.name
+        const {name, module} = req.body
+
         if(!name){
-            throw new Error ("Um ou mais campos não foram preenchidos")
+            throw new Error ("Valor name não informado")
         }
 
         const classRoom : any = {
             id: Date.now().toString(),
             name,
+            module
         }
 
         await connection ("Class").insert(classRoom)

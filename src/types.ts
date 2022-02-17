@@ -15,3 +15,4 @@ export type Professor = {
     birth_date: string
     class_id: string
 }
+

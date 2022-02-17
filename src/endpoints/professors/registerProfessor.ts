@@ -17,7 +17,7 @@ const registerProfessors = async (req: Request, res: Response): Promise<void> =>
             return x.id === class_id
         })
         
-        if (verification.length === 0) {
+        if (verification.length === 1) {
             throw new Error("Classe informada não existe")
         }
 
@@ -32,7 +32,6 @@ const registerProfessors = async (req: Request, res: Response): Promise<void> =>
             birth_date,
             class_id
         }
-
 
         await connection("Professors").insert(professor)
         res.status(200).send({ message: 'Professor cadastrado com sucesso!' })

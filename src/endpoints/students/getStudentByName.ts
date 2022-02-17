@@ -13,7 +13,7 @@ export async function getStudentByName(
 
       if (!result.length) {
          res.statusCode = 404
-         throw new Error("No users found")
+         throw new Error("Não foram encontraos estudantes com esse nome")
       }
 
       res.status(200).send(result)

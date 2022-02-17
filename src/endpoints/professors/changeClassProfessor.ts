@@ -6,7 +6,7 @@ import connection from "../../connection";
 export const changeClassProfessor = async(req: Request, res:Response) : Promise <void> => {
     try {
         const class_id = req.body.class_id
-        const professor_id = req.query.professor_id
+        const professor_id = req.params.professor_id
 
         if(!class_id || !professor_id ){
             throw new Error ("Um ou mais campos não foram preenchidos")

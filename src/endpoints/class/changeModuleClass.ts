@@ -30,3 +30,12 @@ export const changeModuleClass = async(req: Request, res:Response) : Promise <vo
     }
 }
 export default changeModuleClass
+
+/*
+1645102622910	Turma 1A	0
+1645103184091	1B	5
+1645118661897	1A	0
+1645118716713	3A	0
+1645118901147	3A	0
+1645118961850	3C	0
+*/
