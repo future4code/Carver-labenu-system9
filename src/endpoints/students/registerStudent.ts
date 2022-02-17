@@ -6,6 +6,21 @@ import connection from "../../connection";
 export const registerStudent = async(req: Request, res:Response) : Promise <void> => {
     try {
         const {name, email, birth_date, class_id} = req.body
+
+        const classroom = await connection("Class")
+
+        const classroomId = classroom.map((x) => {
+            return x.id
+        })
+
+        const verification = classroom.filter((x) => {
+            return x.id === class_id
+        })
+
+        if (verification.length === 0) {
+            throw new Error("Classe informada não existe")
+        }
+
         if(!name || !email || !birth_date || !class_id){
             throw new Error ("Um ou mais campos não foram preenchidos")
         }

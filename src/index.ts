@@ -6,17 +6,25 @@ import registerProfessors from "./endpoints/professors/registerProfessor";
 import registerStudent from "./endpoints/students/registerStudent";
 import changeClassProfessor from "./endpoints/professors/changeClassProfessor";
 import changeClassStudent from "./endpoints/students/changeClassStudent";
+import registerClass from "./endpoints/class/registerClass";
+import changeModuleClass from "./endpoints/class/changeModuleClass";
+import { getActiveClasses } from "./endpoints/class/getActiveClasses";
 
 
 
 
-app.get("/users", getStudentByName)
+app.get("/students", getStudentByName)
 app.get("/professors", getProfessors)
+app.get('/class', getActiveClasses)
 
+app.post('/students', changeClassStudent) 
+app.post('/professors', changeClassProfessor) 
+app.post('/class', changeModuleClass) 
 
+app.put('/students', registerStudent)
 app.put('/professors', registerProfessors)
-app.put('/users', registerStudent)
+app.put('/class', registerClass)
 
 
-app.post('/professors', changeClassProfessor) //falta função para editar o Banco de Dados
-app.post('/users', changeClassStudent) 
+
+
