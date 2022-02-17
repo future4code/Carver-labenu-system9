@@ -1,21 +1,30 @@
-import express, { Express } from "express"
-import cors from 'cors'
-import {AddressInfo} from 'net'
+import { app } from "./app";
 
-const app = express()
-
-app.use(express.json())
-app.use(cors())
-
-const server = app.listen(process.env.PORT || 3003, () => {
-    if(server){
-        const address = server.address() as AddressInfo
-        console.log(`server is running on port http://localhost:${address.port}`)
-    }
-    else{
-        console.log('failure upon starting server')
-    }
-})
+import { getProfessors } from "./endpoints/professors/getProfessors";
+import { getStudentByName } from "./endpoints/students/getStudentByName";
+import registerProfessors from "./endpoints/professors/registerProfessor";
+import registerStudent from "./endpoints/students/registerStudent";
+import changeClassProfessor from "./endpoints/professors/changeClassProfessor";
+import changeClassStudent from "./endpoints/students/changeClassStudent";
+import registerClass from "./endpoints/class/registerClass";
+import changeModuleClass from "./endpoints/class/changeModuleClass";
+import { getActiveClasses } from "./endpoints/class/getActiveClasses";
 
 
- 
+
+
+app.get("/students", getStudentByName)
+app.get("/professors", getProfessors)
+app.get('/class', getActiveClasses)
+
+app.post('/students', changeClassStudent) 
+app.post('/professors', changeClassProfessor) 
+app.post('/class', changeModuleClass) 
+
+app.put('/students', registerStudent)
+app.put('/professors', registerProfessors)
+app.put('/class', registerClass)
+
+
+
+

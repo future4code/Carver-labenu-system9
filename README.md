@@ -1,24 +1,41 @@
-## LabenuSystem:
+# LabenuSystem: <img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f3eb.svg" width="25">
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
+## Documentação API:
+//link Postman
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+## Deploy no Heroku:
+//link heroku
 
-1. Estudantes 
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
 
-2. Docente
+## Desenvolvedores 🤖
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
+<table>
+  <tr>
+  <td align="center"><a href="https://github.com/ChristpherFeilstrecker">
+    <sub><b>Christopher Feilstrecker da Silva</b></sub>
+        <td align="center"><a href="https://github.com/KyriSagui">
+    <sub><b>Kyriale-Vasconcelos</b></sub>
+    <br />
+  <td align="center"><a href="https://github.com/victorfdovale">
+    <sub><b>Victor Ferreira Do Vale</b></sub>
+</table>
 
-3. Turma
 
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
+## Tecnologias utilizadas: 🖥️
+- Typescript
+- Node
+- SQL
+- MySQL
+- Express
+- Cors
+- Dotenv
+- Knex
+- React
+- Axios
 
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
 
-As funcionalidades básicas são:
+## As funcionalidades básicas são:
 
 → Criar estudante;
 
