@@ -1,4 +1,4 @@
-# LabenuSystem: <img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f3eb.svg" width="25">
+# LabenuSystem: <img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f3eb.svg" width="25"> (backend)
 
 ## Documentação API:
 //link Postman
