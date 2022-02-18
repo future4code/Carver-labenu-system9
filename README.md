@@ -1,7 +1,7 @@
 # LabenuSystem: <img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f3eb.svg" width="25"> (backend)
 
 ## Documentação API:
-//link Postman
+https://documenter.getpostman.com/view/18386367/UVkjvHpB
 
 ## Deploy no Heroku:
 //link heroku
