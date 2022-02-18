@@ -1,7 +1,5 @@
 import express, {Request, Response} from 'express'
-//import  Professor  from '../../../types'
 import connection from "../../connection";
-
 
 export const registerStudent = async(req: Request, res:Response) : Promise <void> => {
     try {
@@ -9,20 +7,22 @@ export const registerStudent = async(req: Request, res:Response) : Promise <void
 
         const classroom = await connection("Class")
 
-        const classroomId = classroom.map((x) => {
-            return x.id
+        const classroomId = classroom.map((idClass) => {
+            return idClass.id
         })
 
-        const verification = classroom.filter((x) => {
-            return x.id === class_id
+        const verification = classroom.filter((idClass) => {
+            return idClass.id === class_id
         })
 
         if (verification.length === 0) {
-            throw new Error("Classe informada não existe")
+            res.status(404)
+            throw new Error("Classe informada não encontrada")
         }
 
         if(!name || !email || !birth_date || !class_id){
-            throw new Error ("Um ou mais campos não foram preenchidos")
+            res.status(404)
+            throw new Error ("Um ou mais valores não foram enviados")
         }
 
         const student : any = {
@@ -37,7 +37,7 @@ export const registerStudent = async(req: Request, res:Response) : Promise <void
         res.status(200).send({message: 'Aluno cadastrado com sucesso!'})
 
     } catch (error:any) {
-        res.status(400).send({message:error.message})
+        res.send({ message: error.message || error.sqlMessage || "Algo deu errado "})
     }
 }
 export default registerStudent

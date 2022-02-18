@@ -8,23 +8,21 @@ export async function getProfessors(req: Request, res: Response): Promise<void> 
 
       const result = await connection("Professors")
 
-      const hobby = req.query.hobby as string;
-
       const professor = result.map((prof: Person) => {
 
-        const professors: Person = new Person(prof.id, prof.name, prof.email, prof.birth_date, prof.class_id)
+         const professors: Person = new Person(prof.id, prof.name, prof.email, prof.birth_date, prof.class_id)
 
-         return result
+         return professors
       })
 
       if (!result.length) {
-         res.statusCode = 404
-         throw new Error("No professors found")
+         res.status(204)
+         throw new Error("Não existem professores cadastrados")
       }
 
       res.status(200).send(professor)
 
    } catch (error: any) {
-      res.status(500).send(error.message)
+      res.send({ message: error.message || error.sqlMessage || "Algo deu errado" })
    }
 }

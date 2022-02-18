@@ -16,15 +16,15 @@ export async function getStudentByHobby(
       ON hobby_id = Hobbies.id
       WHERE Hobbies.name = "${hobby}";
   `)
-console.log(result[0])
+
       if (!result.length) {
-         res.statusCode = 404
+         res.status(204)
          throw new Error("Não foram encontrados estudantes com esse hobby")
       }
 
       res.status(200).send(result[0])
 
    } catch (error: any) {
-      res.status(500).send(error.message)
+      res.send({ message: error.message || error.sqlMessage || "Algo deu errado "})
    }
 }

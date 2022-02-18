@@ -1,5 +1,4 @@
 import express, {Request, Response} from 'express'
-//import  Professor  from '../../../types'
 import connection from "../../connection";
 
 export const changeClassStudent = async(req: Request, res:Response) : Promise <void> => {
@@ -7,7 +6,8 @@ export const changeClassStudent = async(req: Request, res:Response) : Promise <v
         const class_id = req.body.class_id
         const student_id = req.params.student_id
         if(!class_id || !student_id ){
-            throw new Error ("Um ou mais campos não foram preenchidos")
+            res.status(404)
+            throw new Error ("Um ou mais valores não foram enviados")
         }
 
         await connection.raw(`
@@ -19,7 +19,7 @@ export const changeClassStudent = async(req: Request, res:Response) : Promise <v
         res.status(200).send({message: 'Classe do aluno alterada!'})
 
     } catch (error:any) {
-        res.status(400).send({message:error.message})
+        res.send({ message: error.message || error.sqlMessage || "Algo deu errado "})
     }
 }
 export default changeClassStudent
