@@ -35,16 +35,24 @@
 - Axios
 
 
-## As funcionalidades básicas são:
+## As funcionalidades são:
 
-→ Criar estudante;
+ → Verificar estudante pelo nome (ou retornar todos estudantes)
+    
+ → Verificar estudante pelo Hobby
+    
+ → Verificar todos professores cadastrados
+    
+ → Verificar todas classes ativas
 
-→ Criar docente;
+ → Alterar aluno de classe
+    
+ → Alterar professor de classe
+    
+ → Alterar classe de módulo
 
-→ Criar turma;
-
-→ Adicionar estudante na turma;
-
-→ Adicionar docente na turma;
-
-→ Pegar a idade de algum estudante a partir do id
+ → Cadastrar aluno em uma classe
+    
+ → Cadastrar professor em uma classe
+    
+ → cadastrar uma classe
