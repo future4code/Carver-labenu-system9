@@ -20,7 +20,6 @@ export class Professor extends Person implements person {
         class_id: string,
         Specialties: string
     ) {
-        console.log("construindo um professor")
         super(id, name, email, birth_date, class_id) // chama o contrutor da superclasse
         this.Specialties = Specialties
     }

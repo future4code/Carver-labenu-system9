@@ -9,7 +9,7 @@ export class Person {
         public class_id: string
     ) {
 
-        console.log("construindo uma pessoa")
+        
     }
 
 }

@@ -9,7 +9,7 @@ export async function getStudentByHobby(
       const hobby = req.query.hobby as string;
 
       const result = await connection.raw(`
-      SELECT Students.name  FROM Student_hobby
+      SELECT  *  FROM Student_hobby
       JOIN Students
       ON student_id = Students.id
       JOIN Hobbies
