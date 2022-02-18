@@ -1,5 +1,6 @@
 import { Request, Response } from "express"
 import connection from "../../connection";
+import { Person } from "../../types/person";
 
 export async function getStudentByName(  
    req: Request,
@@ -11,14 +12,21 @@ export async function getStudentByName(
       const result = await connection("Students")
          .where('name', 'like', `%${name}%`)
 
+         const students = result.map((student: Person) => {
+
+            const result: Person = new Person(student.id, student.name, student.email, student.birth_date, student.class_id)
+             
+             return result
+          })
+             
       if (!result.length) {
-         res.statusCode = 404
-         throw new Error("No users found")
+         res.status(204)
+         throw new Error("Não foram encontrados estudantes com esse nome")
       }
 
       res.status(200).send(result)
 
    } catch (error: any) {
-      res.status(500).send(error.message)
+      res.send({ message: error.message || error.sqlMessage || "Algo deu errado "})
    }
 }

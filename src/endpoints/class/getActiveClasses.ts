@@ -9,13 +9,13 @@ export async function getActiveClasses(req: Request, res: Response) : Promise<vo
       `)
 
       if (!result.length) {
-         res.statusCode = 404
+         res.status(204)
          throw new Error("Não foram encontradas turmas ativas")
       }
 
       res.status(200).send(result[0])
 
    } catch (error: any) {
-      res.status(500).send(error.message)
+      res.send({ message: error.message || error.sqlMessage || "Algo deu errado "})
    }
 }
