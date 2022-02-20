@@ -4,7 +4,7 @@
  Acesse o postman aqui 👉 [ <img src="https://c.tenor.com/BVi9cqo4nUEAAAAC/pikachu-pokemon.gif" width="120" align="center"> ](https://documenter.getpostman.com/view/18386367/UVkjvHpB )
 
 ## Deploy no Heroku:
-//link heroku
+https://labenu-system9.herokuapp.com/
 
 
 
