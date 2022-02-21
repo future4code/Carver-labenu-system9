@@ -1,7 +1,7 @@
 # LabenuSystem: <img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f3eb.svg" width="25"> (backend)
 
 ## Documentação API:
- Acesse o postman aqui 👉 [ <img src="https://c.tenor.com/BVi9cqo4nUEAAAAC/pikachu-pokemon.gif" width="120" align="center"> ](https://documenter.getpostman.com/view/18386367/UVkjvHpB )
+ Acesse o postman aqui 👉 [ <img src="https://c.tenor.com/BVi9cqo4nUEAAAAC/pikachu-pokemon.gif" width="120" align="center"> ](https://documenter.getpostman.com/view/18386367/UVkjvHpB)
 
 ## Deploy no Heroku:
 https://labenu-system9.herokuapp.com/
